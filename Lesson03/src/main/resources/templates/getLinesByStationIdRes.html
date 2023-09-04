@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv=Cache-Control content=no-cache />
+    <title>根据某一站查看经过它的线</title>
+</head>
+<body>
+<table border="1" align="center" style="border-color: black;border-style:hidden">
+    <tr>
+        <th>站点</th>
+        <th>经过它的线路</th>
+    </tr>
+    <tr th:each="line:${lines}">
+        <td th:text="line:${line.getStationName()}"></td>
+        <td th:text="${line.getlineId()}"></td>
+    </tr>
+</table>
+</body>
+</html>

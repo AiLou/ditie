@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv=Cache-Control content=no-cache />   <!---重新加载页面  禁止缓存作用  --!>
+    <title>获取两站之间的最短路径</title>
+</head>
+<body>
+    <form th:action="@{/getShortestWay}" method="post">
+        <p>
+            <input type="text" name="startStationName">
+        </p>
+        <p>
+            <input type="text" name="endStationName">
+        </p>
+        <p>
+            <input type="submit">
+        </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv=Cache-Control content=no-cache />   <!---重新加载页面  禁止缓存作用  --!>
+    <title>Title</title>
+</head>
+<body>
+    <table border="1" align="center" style="border-color: black;border-style:hidden">
+        <tr>
+            <th>线路</th>
+            <th>站点</th>
+        </tr>
+        <tr th:each="line:${alllines}">
+            <td th:text="${line.getlineId()}">线路</td>
+            <td>
+                站点
+                <table border="1" align="center" style="border-color: black;border-style:hidden">
+                    <tr th:each="station:${line.getStations()}">
+                        <td th:text="{station.getStationName()}">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

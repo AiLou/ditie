@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv=Cache-Control content=no-cache />   <!---重新加载页面  禁止缓存作用  --!>
+    <style>
+        div{
+            width: 200px;
+            height: 50px;
+        }
+
+    </style>
+    <title>Title</title>
+</head>
+<body>
+
+<form th:action="@{/getAllLines}" method="post">
+<div>
+    <input type="submit" value="查看所有线路">
+</div>
+</form>
+
+<form th:action="@{/toInputLineIdPage}" method="post">
+<div>
+    <input type="submit" value="根据线路查看改线路上的站点">
+</div>
+</form>
+
+<form th:action="@{/toInputStationNamePage}" method="post" >
+<div>
+    <input type="submit" value="查询两站之间的最短路线">
+</div>
+</form>
+
+</body>
+</html>

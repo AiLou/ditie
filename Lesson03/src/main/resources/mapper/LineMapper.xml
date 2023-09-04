@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tea.lesson03.mapper.LineMapper">
+    <resultMap id="lineMap" type="line">
+        <id column="line_id" property="lineId" jdbcType="VARCHAR"></id>
+        <result column="line_name" property="lineName" jdbcType="VARCHAR"></result>
+        <result column="station_id" property="stationId" jdbcType="VARCHAR"></result>
+        <result column="station_Num" property="stationNum" jdbcType="INTEGER"></result>
+    </resultMap>
+
+    <select id="select" parameterType="map" resultMap="lineMap">
+        select * from line
+        <where>
+            <if test="lineId != null">
+                line_id = #{lineId}
+            </if>
+            <if test="stationId != null">
+                and station_id like concat('%',#{stationId},'%')
+            </if>
+        </where>
+    </select>
+
+</mapper>
